@@ -39,3 +39,85 @@ function objStudente (nome, cognome, età){
 
 let nuovoStudente = objStudente ("morena", "fischione", 37);
 console.log(nuovoStudente);
+
+
+/**
+    Creare un array di oggetti di squadre di calcio.
+    Ogni squadra avrà diverse proprietà: nome, punti fatti e falli subiti.
+    Nome sarà l'unica proprietà da compilare, mentre le altre saranno tutte settate a 0.
+    Generare numeri random al posto degli 0 nelle proprietà:
+    Punti fatti e falli subiti
+ */
+
+    let squadra = [
+        {
+            nome : "tornimparte",
+            puntiFatti : 0,
+            falliSubiti : 0,
+        },
+        {
+            nome : "pizzoli",
+            puntiFatti : 0,
+            falliSubiti : 0,
+        },
+        {
+            nome : "coppito",
+            puntiFatti : 0,
+            falliSubiti : 0,
+        },
+        {
+            nome : "cagnano",
+            puntiFatti : 0,
+            falliSubiti : 0,
+        },
+    ]
+
+
+    for ( let i = 0; i < squadra.length; i++) {
+        let squadraAttuale = squadra[i];
+        squadraAttuale.puntiFatti = getRandomNumber(0,150);
+        squadraAttuale.falliSubiti = getRandomNumber(0,150);
+    };
+
+    console.table(squadra);
+
+
+    // Creo una funzione che genera un numero randomico
+    function getRandomNumber(min, max){
+	    return Math.floor(Math.random() * (max - min + 1)) + min;
+    };
+
+
+
+/**
+    Creare un array di oggetti: ogni oggetto descriverà una bici 
+    da corsa con le seguenti proprietà: nome e peso.
+    Stampare a schermo la bici con peso minore.
+ */
+
+
+  let bici = [
+        {
+        nome : "Bianca",
+        peso : 250,
+        },
+        {
+        nome : "Nera",
+        peso : 300,
+        },
+        {
+        nome : "Rossa",
+        peso : 350,
+        },
+  ];
+
+  let bicicletteLeggera =   bici[0];
+
+  for ( let i = 0; i < bici.length; i++) {
+      let biciAttuale = bici[i];
+        if (biciAttuale.peso < bicicletteLeggera.peso){
+            bicicletteLeggera = biciAttuale;
+        }
+  }
+
+  console.table(bicicletteLeggera);
